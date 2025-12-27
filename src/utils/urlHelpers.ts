@@ -1,22 +1,29 @@
 /**
- * Utilitaire pour gérer les URLs avec la base /blog-pascal
+ * Utilitaire pour gérer les URLs avec la base configurée dans Astro
  */
 
-const BASE_PATH = "/blog-pascal";
+// Utilise la variable d'environnement fournie par Astro
+const BASE_PATH = import.meta.env.BASE_URL || "/";
 
 /**
  * Retourne le chemin avec la base path préfixée
  * @param path - Le chemin à préfixer
- * @returns Le chemin avec /blog-pascal
+ * @returns Le chemin avec la base URL configurée
  */
 export function withBase(path: string): string {
-  if (path.startsWith(BASE_PATH)) {
+  // Si le chemin contient déjà la base, retourne tel quel
+  if (BASE_PATH !== "/" && path.startsWith(BASE_PATH)) {
     return path;
   }
+
+  // Pour la racine
   if (path === "/") {
-    return BASE_PATH + "/";
+    return BASE_PATH === "/" ? "/" : BASE_PATH + "/";
   }
-  return BASE_PATH + path;
+
+  // Pour les autres chemins
+  const cleanPath = path.startsWith("/") ? path : "/" + path;
+  return BASE_PATH === "/" ? cleanPath : BASE_PATH + cleanPath;
 }
 
 /**
