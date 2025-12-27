@@ -27,7 +27,7 @@ description: Système complet de pagination pour afficher plusieurs artistes ave
 
 ---
 
-## Motivation 2
+## Motivation
 
 Le système de pagination permet d'afficher **les albums de plusieurs artistes** sur un panel avec :
 
