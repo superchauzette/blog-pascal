@@ -1,14 +1,12 @@
 import { BLOG_PATH } from "@/content.config";
 import { slugifyStr } from "./slugify";
 
-const BASE_URL = import.meta.env.BASE_URL || "/";
-
 /**
  * Get full path of a blog post
  * @param id - id of the blog post (aka slug)
  * @param filePath - the blog post full file location
  * @param includeBase - whether to include `/posts` in return value
- * @returns blog post path with base URL
+ * @returns blog post path (Astro handles BASE_URL automatically)
  */
 export function getPath(
   id: string,
@@ -31,10 +29,8 @@ export function getPath(
 
   // If not inside the sub-dir, simply return the file path
   if (!pathSegments || pathSegments.length < 1) {
-    const path = [basePath, slug].join("/");
-    return BASE_URL === "/" ? path : BASE_URL + path;
+    return [basePath, slug].join("/");
   }
 
-  const path = [basePath, ...pathSegments, slug].join("/");
-  return BASE_URL === "/" ? path : BASE_URL + path;
+  return [basePath, ...pathSegments, slug].join("/");
 }
