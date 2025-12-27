@@ -13,7 +13,8 @@ import { SITE } from "./src/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: SITE.website,
+  site: "https://superchauzette.github.io",
+  base: "/blog-pascal",
   output: "static",
   integrations: [
     sitemap({
