@@ -1,4 +1,6 @@
 ---
+import { withBase } from "@/utils/urlHelpers";
+
 export interface Props {
   id?: string;
   href: string;
@@ -31,7 +33,7 @@ const {
   ) : (
     <a
       id={id}
-      {href}
+      href={withBase(href)}
       class:list={["group inline-block hover:text-accent", className]}
       aria-label={ariaLabel}
       title={title}
