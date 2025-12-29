@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
-import Socials from "@/components/Socials.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import Card from "@/components/Card.astro";
 import Hr from "@/components/Hr.astro";
@@ -11,7 +10,6 @@ import getSortedPosts from "@/utils/getSortedPosts";
 import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
-import { SOCIALS } from "@/constants";
 import { withBase } from "@/utils/urlHelpers";
 
 const posts = await getCollection("blog");
@@ -58,15 +56,6 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           l'index du guide Pascal
         </LinkButton> pour commencer.
       </p>
-      {
-        // only display if at least one social link is enabled
-        SOCIALS.length > 0 && (
-          <div class="mt-4 flex flex-col sm:flex-row sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
     </section>
 
     <Hr />
@@ -75,7 +64,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       featuredPosts.length > 0 && (
         <>
           <section id="featured" class="pt-12 pb-6">
-            <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
+            <h2 class="text-2xl font-semibold tracking-wide">En Vedette</h2>
             <ul>
               {featuredPosts.map(data => (
                 <Card variant="h3" {...data} />
@@ -90,7 +79,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     {
       recentPosts.length > 0 && (
         <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
+          <h2 class="text-2xl font-semibold tracking-wide">Articles Récents</h2>
           <ul>
             {recentPosts.map(
               (data, index) =>
@@ -103,7 +92,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
     <div class="my-8 text-center">
       <LinkButton href={withBase("/posts/")}>
-        All Posts
+        Voir tous les articles
         <IconArrowRight class="inline-block rtl:-rotate-180" />
       </LinkButton>
     </div>

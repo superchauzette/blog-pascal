@@ -1,37 +1,38 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "About"
+title: "À propos"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+Ce blog est dédié à l'apprentissage de la programmation **Pascal** avec **Lazarus**, un environnement de développement libre et multiplateforme.
 
-![Astro Paper](public/astropaper-og.jpg)
+## À propos de ce tutoriel
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+Ce site présente un tutoriel complet pour apprendre à développer une application de gestion musicale complète en Pascal. À travers une série d'articles progressifs, vous découvrirez comment :
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+- Créer une interface graphique moderne avec Lazarus
+- Gérer des données (artistes, albums, playlists)
+- Implémenter un lecteur audio fonctionnel
+- Intégrer différentes sources de données (locales, YouTube, SoundCloud)
+- Créer des interfaces utilisateur avancées avec pagination
 
-## Features
+## Pourquoi Pascal et Lazarus ?
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+Pascal reste un excellent langage pour apprendre la programmation structurée et orientée objet. Lazarus offre :
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+- **Gratuit et open-source** : IDE complet sans coût
+- **Multiplateforme** : Développez pour Windows, Linux, macOS
+- **Visual Form Designer** : Création d'interfaces graphiques intuitive
+- **Compilation rapide** : Applications natives performantes
+- **Riche en composants** : Large bibliothèque de composants visuels
 
-and so much more.
+## Structure du tutoriel
 
-## Show your support
+Les articles sont organisés de manière progressive, depuis les concepts de base jusqu'à la création d'une application complète et fonctionnelle. Chaque article contient du code commenté et des explications détaillées.
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
+Commencez par l'[index](https://superchauzette.github.io/blog-pascal/posts/how-to-code-pascal-index) pour suivre le tutoriel dans l'ordre recommandé.
 
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
+## Contribuer
 
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
+Vous avez trouvé une erreur ou souhaitez améliorer le contenu ? N'hésitez pas à ouvrir une issue ou proposer une pull request sur le [dépôt GitHub](https://github.com/superchauzette/blog-pascal).
 
-Kyay zuu! 🙏🏼
+Bon apprentissage ! 🎵

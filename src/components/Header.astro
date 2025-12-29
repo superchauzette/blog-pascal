@@ -66,18 +66,27 @@ const checkActive = (path: string) => isActive(currentPath, path);
           ]}
         >
           <li class="col-span-2">
-            <a href={withBase("/posts")} class:list={{ "active-nav": checkActive("/posts") }}>
-              Posts
+            <a
+              href={withBase("/posts")}
+              class:list={{ "active-nav": checkActive("/posts") }}
+            >
+              Articles
             </a>
           </li>
           <li class="col-span-2">
-            <a href={withBase("/tags")} class:list={{ "active-nav": checkActive("/tags") }}>
+            <a
+              href={withBase("/tags")}
+              class:list={{ "active-nav": checkActive("/tags") }}
+            >
               Tags
             </a>
           </li>
           <li class="col-span-2">
-            <a href={withBase("/about")} class:list={{ "active-nav": checkActive("/about") }}>
-              About
+            <a
+              href={withBase("/about")}
+              class:list={{ "active-nav": checkActive("/about") }}
+            >
+              À Propos
             </a>
           </li>
           {
@@ -88,7 +97,8 @@ const checkActive = (path: string) => isActive(currentPath, path);
                   class:list={[
                     "focus-outline flex justify-center p-3 sm:p-1",
                     {
-                      "active-nav [&>svg]:stroke-accent": checkActive("/archives"),
+                      "active-nav [&>svg]:stroke-accent":
+                        checkActive("/archives"),
                     },
                   ]}
                   ariaLabel="archives"
@@ -100,20 +110,24 @@ const checkActive = (path: string) => isActive(currentPath, path);
               </li>
             )
           }
-          <li class="col-span-1 flex items-center justify-center">
-            <LinkButton
-              href={withBase("/search")}
-              class:list={[
-                "focus-outline flex p-3 sm:p-1",
-                { "[&>svg]:stroke-accent": checkActive("/search") },
-              ]}
-              ariaLabel="search"
-              title="Search"
-            >
-              <IconSearch />
-              <span class="sr-only">Search</span>
-            </LinkButton>
-          </li>
+          {
+            SITE.showSearch && (
+              <li class="col-span-1 flex items-center justify-center">
+                <LinkButton
+                  href={withBase("/search")}
+                  class:list={[
+                    "focus-outline flex p-3 sm:p-1",
+                    { "[&>svg]:stroke-accent": checkActive("/search") },
+                  ]}
+                  ariaLabel="search"
+                  title="Search"
+                >
+                  <IconSearch />
+                  <span class="sr-only">Search</span>
+                </LinkButton>
+              </li>
+            )
+          }
           {
             SITE.lightAndDarkMode && (
               <li class="col-span-1 flex items-center justify-center">
